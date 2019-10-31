@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<div class="body-content">
+  <div class="log-out"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></div>
+  <br>
+
+  <!--Navigation bar -->
+  <div class="nav-bar"><%= link_to "Cars", cars_url %></div>
+  <div class="nav-bar"><%= link_to "Car Makes", makes_url %></div>
+  <div class="nav-bar active-page"><%= link_to "Car Parts", parts_url %></div>
+
+  <div class="page-content">
+    <h1>Car Parts</h1>
+
+    <!--Search function -->
+    <%= form_tag(search_parts_url, method: "get") do %>
+      <%= label_tag(:query, "Search for car parts:") %>
+      <%= text_field_tag(:query) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @parts.each do |part| %>
+          <tr>
+            <td><%= part.name %></td>
+            <td class="links"><%= link_to 'Show', part %></td>
+            <td class="links"><%= link_to 'Edit', edit_part_path(part) %></td>
+            <td class="links"><%= link_to 'Destroy', part, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="links"><%= link_to 'New Part', new_part_path %></div>
+  </div>
+</div>

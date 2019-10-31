@@ -1,0 +1,18 @@
+<div class="body-content">
+  <div class="log-out"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></div>
+  <br>
+
+  <!--Navigation bar -->
+  <div class="nav-bar"><%= link_to "Cars", cars_url %></div>
+  <div class="nav-bar active-page"><%= link_to "Car Makes", makes_url %></div>
+  <div class="nav-bar"><%= link_to "Car Parts", parts_url %></div>
+
+  <div class="page-content">
+    <h1>Editing Car Make</h1>
+
+    <%= render 'form', make: @make %>
+
+    <div class="links"><%= link_to 'Show', @make %></div>
+    <div class="links"> <%= link_to 'Back', makes_path %></div>
+  </div>
+</div>

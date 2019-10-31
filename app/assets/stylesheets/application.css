@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.log-out {
+    display: inline-block;
+    padding: 10px;
+    border-style: solid;
+    border-color: #666666;
+    border-radius: 5px;
+    position: relative;
+    top: -15px;
+    float: right;
+
+}
+.log-out:hover {
+    background-color: lightblue;
+}
+.body-content {
+    margin: auto;
+    width: 50%;
+}
+.nav-bar{
+    padding: 10px;
+    margin-right: -2px;
+    background-color: lightgray;
+    display: inline-block;
+    border-top-right-radius: 10px;
+    margin-top: 10px;
+}
+.nav-bar:hover {
+    background-color: lightblue;
+}
+.active-page {
+    background-color: #999999;
+}
+a:link, a:visited, a:active {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    background: none;
+}
+.page-content {
+    background-color: #f2f2f2;
+    padding: 20px;
+    max-width: 700px;
+    border-style: solid;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-color: #999999;
+
+}
+h1 {
+    text-align: center;
+}
+.links {
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+    display: inline-block;
+}
+.links:hover {
+    background: lightblue;
+}
+.table {
+    column-count: 3;
+}
+.bold {
+    font-weight: bold;
+}

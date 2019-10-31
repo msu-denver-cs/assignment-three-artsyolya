@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="body-content">
+  <div class="log-out"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></div>
+  <br>
+
+  <!--Navigation bar -->
+  <div class="nav-bar"><%= link_to "Cars", cars_url %></div>
+  <div class="nav-bar active-page"><%= link_to "Car Makes", makes_url %></div>
+  <div class="nav-bar"><%= link_to "Car Parts", parts_url %></div>
+
+  <div class="page-content">
+    <h1>Car Make</h1>
+    <p>
+      <strong>Name:</strong>
+      <%= @make.name %>
+    </p>
+
+    <p>
+      <strong>Country:</strong>
+      <%= @make.country %>
+    </p>
+
+    <ul>
+      <% @make.cars.each do |car| %>
+        <li><%= car.model %></li>
+      <% end %>
+    </ul>
+
+    <div class="links"><%= link_to 'Edit', edit_make_path(@make) %></div>
+    <div class="links"><%= link_to 'Back', makes_path %></div>
+  </div>
+</div>

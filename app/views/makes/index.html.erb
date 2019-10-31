@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<div class="body-content">
+  <div class="log-out"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></div>
+  <br>
+
+  <!--Navigation bar -->
+  <div class="nav-bar"><%= link_to "Cars", cars_url %></div>
+  <div class="nav-bar active-page"><%= link_to "Car Makes", makes_url %></div>
+  <div class="nav-bar"><%= link_to "Car Parts", parts_url %></div>
+
+  <div class="page-content">
+    <h1>Car Makes</h1>
+
+    <!--Search function -->
+    <%= form_tag(search_makes_url, method: "get") do %>
+      <%= label_tag(:query, "Search for car make:") %>
+      <%= text_field_tag(:query) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Country</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @makes.each do |make| %>
+          <tr>
+            <td><%= make.name %></td>
+            <td><%= make.country %></td>
+            <td class="links"><%= link_to 'Show', make %></td>
+            <td class="links"><%= link_to 'Edit', edit_make_path(make) %></td>
+            <td class="links"><%= link_to 'Destroy', make, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="links"><%= link_to 'New Make', new_make_path %></div>
+  </div>
+</div>
